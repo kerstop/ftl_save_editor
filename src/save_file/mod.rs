@@ -1,9 +1,11 @@
-mod save_file_parser;
 mod tests;
-mod save_file;
-mod score_categories;
+mod head;
+mod print;
+mod read;
+
+
+
 
 pub use {
-    save_file::SaveFile,
-
+    head::SaveFile,
 };

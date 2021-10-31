@@ -2,6 +2,8 @@
 
 
 mod save_file;
+mod save_file_parser;
+mod score_categories;
 
 use save_file::SaveFile;
 use std::path::Path;

@@ -42,4 +42,11 @@ impl SaveFileParser{
             Err(_) => Err(String::from("Error parsing string"))
         }
     }
+
+    #[allow(unused)]
+    pub fn read_until_eof(&mut self) -> Vec<u8> {
+        let mut buf: Vec<u8> = Vec::new();
+        self.file.read_to_end(&mut buf);
+        return buf;
+    }
 }

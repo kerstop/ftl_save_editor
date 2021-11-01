@@ -15,9 +15,9 @@ impl SaveFile {
         let mut parser = SaveFileParser::new(file);
         let mut save : SaveFile = Default::default();
 
-        ////////////
+        // ////// //
         // Header //
-        ////////////
+        // ////// //
         save.version = parser.read_i32();
         save.unkown_data_block_1 = parser.read_raw_bytes(4);
         save.ae_content = parser.read_i32();
@@ -46,6 +46,11 @@ impl SaveFile {
                 ScoreCategory::new(name, value)
             )
         }
+
+        // //////////////////// //
+        // The rest of the file //
+        // //////////////////// //
+        save.unkown_data_block = parser.read_until_eof(); 
 
         return Ok(save);
     }

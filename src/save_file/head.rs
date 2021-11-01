@@ -26,6 +26,11 @@ pub struct SaveFile {
     // //////////////// //
     pub scores: Vec<ScoreCategory>,
 
+    // //////////////////// //
+    // The rest of the file //
+    // //////////////////// //
+    pub unkown_data_block : Vec<u8>,
+
 }
 
 impl SaveFile {

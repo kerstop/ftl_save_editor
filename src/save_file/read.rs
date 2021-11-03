@@ -2,6 +2,7 @@ use std::path::PathBuf;
 use std::fs::File;
 use super::super::save_file_parser::SaveFileParser;
 use super::super::score_categories::ScoreCategory;
+use super::super::crew_member::CrewMember;
 use super::head::SaveFile;
 
 impl SaveFile {
@@ -53,6 +54,16 @@ impl SaveFile {
         parser.read_string()?;
         parser.read_string()?;
         save.ship_graphics_base_name = parser.read_string()?;
+
+        // ///////////// //
+        // Crew Overview //
+        // ///////////// //
+        let num_crew = parser.read_i32();
+        for i in 0..num_crew {
+            save.crew.push(Default::default());
+            save.crew.get_mut(i as usize).expect("").race = parser.read_string()?;
+            save.crew.get_mut(i as usize).expect("").name = parser.read_string()?;
+        }
 
         // //////////////////// //
         // The rest of the file //

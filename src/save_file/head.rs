@@ -34,6 +34,11 @@ pub struct SaveFile {
     //ship id
     pub ship_graphics_base_name: String,
 
+    // ///////////// //
+    // Crew Overview //
+    // ///////////// //
+    pub crew: Vec<CrewMember>,
+
     // //////////////////// //
     // The rest of the file //
     // //////////////////// //

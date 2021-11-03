@@ -1,7 +1,6 @@
 use super::head::SaveFile;
 use super::super::save_file_writer::SaveFileWriter;
 use std::path::PathBuf;
-use std::fs::File;
 use std::fs::OpenOptions;
 
 impl SaveFile {
@@ -48,6 +47,15 @@ impl SaveFile {
         writer.write_string(&self.ship_id);
         writer.write_string(&self.ship_name);
         writer.write_string(&self.ship_graphics_base_name);
+
+        // ///////////// //
+        // Crew Overview //
+        // ///////////// //
+        writer.write_i32(self.crew.len() as i32);
+        for i in &self.crew {
+            writer.write_string(&i.race);
+            writer.write_string(&i.name);
+        }
 
         // //////////////////// //
         // The rest of the file //

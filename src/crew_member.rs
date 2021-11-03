@@ -1,5 +1,5 @@
-
+#[derive(Clone, Debug, Default)]
 pub struct CrewMember {
-    race: String,
-    name: String,
+    pub race: String,
+    pub name: String,
 }

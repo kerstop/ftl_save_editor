@@ -47,6 +47,13 @@ impl SaveFile {
             )
         }
 
+        // //////////// //
+        // Ship Details //
+        // //////////// //
+        parser.read_string()?;
+        parser.read_string()?;
+        save.ship_graphics_base_name = parser.read_string()?;
+
         // //////////////////// //
         // The rest of the file //
         // //////////////////// //

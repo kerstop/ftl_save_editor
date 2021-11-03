@@ -5,6 +5,7 @@ mod save_file;
 mod save_file_parser;
 mod save_file_writer;
 mod score_categories;
+mod crew_member;
 
 use save_file::SaveFile;
 use std::path::Path;

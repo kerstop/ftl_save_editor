@@ -42,6 +42,13 @@ impl SaveFile {
             writer.write_i32(i.value);
         }
 
+        // //////////// //
+        // Ship Details //
+        // //////////// //
+        writer.write_string(&self.ship_id);
+        writer.write_string(&self.ship_name);
+        writer.write_string(&self.ship_graphics_base_name);
+
         // //////////////////// //
         // The rest of the file //
         // //////////////////// //

@@ -1,4 +1,5 @@
 use super::super::score_categories::ScoreCategory;
+use super::super::crew_member::CrewMember;
 
 #[derive(Default, Debug)]
 pub struct SaveFile {
@@ -25,6 +26,13 @@ pub struct SaveFile {
     // Score Categories //
     // //////////////// //
     pub scores: Vec<ScoreCategory>,
+
+    // //////////// //
+    // Ship Details //
+    // //////////// //
+    //ship name
+    //ship id
+    pub ship_graphics_base_name: String,
 
     // //////////////////// //
     // The rest of the file //

@@ -27,4 +27,17 @@ There will be an arbetrary number of score categories based on the value in `num
 string  : category name
 4 bytes : category value
 ```
+## Ship Details
+```
+string  : ship name
+string  : ship ID
+string  : ship graphics base name
+```
 
+## Crew Overview
+```
+4 bytes : number of crew(n)
+--- This section will repeat n number of times
+string  : race
+string  : name
+```

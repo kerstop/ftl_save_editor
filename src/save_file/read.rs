@@ -1,4 +1,5 @@
 use std::path::PathBuf;
+use std::path::Path;
 use std::fs::File;
 use super::super::save_file_parser::SaveFileParser;
 use super::super::score_categories::ScoreCategory;
@@ -6,7 +7,7 @@ use super::super::crew_member::CrewMember;
 use super::head::SaveFile;
 
 impl SaveFile {
-    pub fn read_from_file(path: PathBuf) -> Result<SaveFile, String> {
+    pub fn read_from_file(path: &Path) -> Result<SaveFile, String> {
         
         let file: File = match File::open(&path){
             Ok(x) => x,
@@ -80,7 +81,7 @@ impl SaveFile {
             None => return Err(String::from("Unable to locate users home directory.")),
         };
         path.push(PathBuf::from("Documents/my games/fasterthanlight/continue.sav"));
-        SaveFile::read_from_file(path)
+        SaveFile::read_from_file(path.as_path())
     }
 
 }

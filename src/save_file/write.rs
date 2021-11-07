@@ -1,10 +1,11 @@
 use super::head::SaveFile;
 use super::super::save_file_writer::SaveFileWriter;
 use std::path::PathBuf;
+use std::path::Path;
 use std::fs::OpenOptions;
 
 impl SaveFile {
-    pub fn write_to_file(&self, path: PathBuf) -> Result<(), String> {
+    pub fn write_to_file(&self, path: &Path) -> Result<(), String> {
         let file = match OpenOptions::new().write(true).create(true).open(&path) {
             Ok(x) => x,
             Err(_) => return Err(format!("Unable to write to file at {:?}", path))
@@ -72,7 +73,7 @@ impl SaveFile {
             None => return Err(String::from("Unable to locate users home directory.")),
         };
         path.push(PathBuf::from("Documents/my games/fasterthanlight/continue.sav"));
-        self.write_to_file(path);
+        self.write_to_file(path.as_path());
         Ok(())
     }
 }

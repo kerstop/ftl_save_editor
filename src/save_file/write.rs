@@ -49,11 +49,11 @@ impl SaveFile {
         writer.write_string(&self.ship_name);
         writer.write_string(&self.ship_graphics_base_name);
 
-        // ///////////// //
-        // Crew Overview //
-        // ///////////// //
-        writer.write_i32(self.crew.len() as i32);
-        for i in &self.crew {
+        // ////////////////////// //
+        // Starting Crew Overview //
+        // ////////////////////// //
+        writer.write_i32(self.starting_crew.len() as i32);
+        for i in &self.starting_crew {
             writer.write_string(&i.race);
             writer.write_string(&i.name);
         }

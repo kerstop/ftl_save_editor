@@ -1,5 +1,5 @@
 use super::super::score_categories::ScoreCategory;
-use super::super::crew_member::CrewMember;
+use super::super::crew_member::StartingCrewMember;
 
 #[derive(Default, Debug)]
 pub struct SaveFile {
@@ -34,10 +34,10 @@ pub struct SaveFile {
     //ship id
     pub ship_graphics_base_name: String,
 
-    // ///////////// //
-    // Crew Overview //
-    // ///////////// //
-    pub crew: Vec<CrewMember>,
+    // ////////////////////// //
+    // Starting Crew Overview //
+    // ////////////////////// //
+    pub starting_crew: Vec<StartingCrewMember>,
 
     // ////////////// //
     // Ship Resources //

@@ -10,10 +10,9 @@ use std::path::Path;
 
 fn main() {
 
-    let mut save2 = SaveFile::read_from_local_save().expect("s");
-    save2.print_ship_designation();
-    save2.ship_name = "Testing123".to_string();
-    save2.print_ship_designation();
-    save2.write_to_local_save();
+    let mut save = SaveFile::read_from_local_save().unwrap();
+    save.ship_name = "Testing123".to_string();
+    save.scrap = 500;
+    save.write_to_local_save();
      
 }

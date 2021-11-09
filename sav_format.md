@@ -34,7 +34,7 @@ string  : ship ID
 string  : ship graphics base name
 ```
 
-## Crew Overview
+## Starting Crew Overview
 ```
 4 bytes : number of crew(n)
 --- This section will repeat n number of times

@@ -39,6 +39,15 @@ pub struct SaveFile {
     // ///////////// //
     pub crew: Vec<CrewMember>,
 
+    // ////////////// //
+    // Ship Resources //
+    // ////////////// //
+    pub hull: i32,
+    pub fuel: i32,
+    pub drones: i32,
+    pub missiles: i32,
+    pub scrap: i32,
+
     // //////////////////// //
     // The rest of the file //
     // //////////////////// //

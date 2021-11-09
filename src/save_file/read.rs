@@ -66,6 +66,15 @@ impl SaveFile {
             save.crew.get_mut(i as usize).expect("").name = parser.read_string()?;
         }
 
+        // ////////////// //
+        // Ship Resources //
+        // ////////////// //
+        save.hull = parser.read_i32();
+        save.fuel = parser.read_i32();
+        save.drones = parser.read_i32();
+        save.missiles = parser.read_i32();
+        save.scrap = parser.read_i32();
+
         // //////////////////// //
         // The rest of the file //
         // //////////////////// //

@@ -41,3 +41,12 @@ string  : ship graphics base name
 string  : race
 string  : name
 ```
+
+## Ship Resources
+```
+4 bytes : Hull
+4 bytes : Fuel
+4 bytes : Drones
+4 bytes : Missiles
+4 bytes : Scrap
+```

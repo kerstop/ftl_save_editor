@@ -58,6 +58,15 @@ impl SaveFile {
             writer.write_string(&i.name);
         }
 
+        // ////////////// //
+        // Ship Resources //
+        // ////////////// //
+        writer.write_i32(self.hull);
+        writer.write_i32(self.fuel);
+        writer.write_i32(self.drones);
+        writer.write_i32(self.missiles);
+        writer.write_i32(self.scrap);
+
         // //////////////////// //
         // The rest of the file //
         // //////////////////// //

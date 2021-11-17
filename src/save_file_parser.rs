@@ -44,6 +44,11 @@ impl SaveFileParser{
     }
 
     #[allow(unused)]
+    pub fn read_bool(&mut self) -> bool {
+        return self.read_i32() % 2 == 0;
+    }
+
+    #[allow(unused)]
     pub fn read_until_eof(&mut self) -> Vec<u8> {
         let mut buf: Vec<u8> = Vec::new();
         self.file.read_to_end(&mut buf);

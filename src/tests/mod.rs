@@ -48,20 +48,26 @@ fn compare_read_and_write(in_file_path:&Path) -> Result<(), String> {
 #[test]
 fn read_and_write() -> Result<(), String> {
     
-    let example_1 = Path::new("src\\save_file\\tests\\test_saves\\example-1.sav");
-    match compare_read_and_write(example_1) {
+    let mut example_1 = PathBuf::from(file!());
+    example_1.pop();
+    example_1.push("test_saves\\example-1.sav");
+    match compare_read_and_write(example_1.as_path()) {
         Ok(_) => (),
         Err(e) => return Err(e)
     }
 
-    let example_2 = Path::new("src\\save_file\\tests\\test_saves\\example-2.sav");
-    match compare_read_and_write(example_2) {
+    let mut example_2 = PathBuf::from(file!());
+    example_2.pop();
+    example_2.push("test_saves\\example-2.sav");
+    match compare_read_and_write(example_2.as_path()) {
         Ok(_) => (),
         Err(e) => return Err(e)
     }
 
-    let example_3 = Path::new("src\\save_file\\tests\\test_saves\\example-3.sav");
-    match compare_read_and_write(example_3) {
+    let mut example_3 = PathBuf::from(file!());
+    example_3.pop();
+    example_3.push("test_saves\\example-3.sav");
+    match compare_read_and_write(example_3.as_path()) {
         Ok(_) => (),
         Err(e) => return Err(e)
     }

@@ -58,6 +58,14 @@ impl SaveFile {
             writer.write_string(&i.name);
         }
 
+        // ///////////// //
+        // Opponent info //
+        // ///////////// //
+        writer.write_bool(self.opponent_hostility);
+        writer.write_i32(self.opponent_jump_charge);
+        writer.write_bool(self.opponent_is_jumping);
+        writer.write_i32(self.opponent_jump_animation_ticks);
+
         // ////////////// //
         // Ship Resources //
         // ////////////// //

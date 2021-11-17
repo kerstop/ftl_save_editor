@@ -45,7 +45,7 @@ impl SaveFileParser{
 
     #[allow(unused)]
     pub fn read_bool(&mut self) -> bool {
-        return self.read_i32() % 2 == 0;
+        return self.read_i32() % 2 == 1;
     }
 
     #[allow(unused)]

@@ -2,30 +2,30 @@
 
 ## Header - (32 bytes)
 ```
-4 bytes : version number
+int     : version number
 4 bytes : unkown data block 1
-4 bytes : AE content enabled
-4 bytes : difficulty
-4 bytes : ships defeated
-4 bytes : jumps in sector
-4 bytes : scrap collected
-4 bytes : crew recruited
+int     : AE content enabled
+int     : difficulty
+int     : ships defeated
+int     : jumps in sector
+int     : scrap collected
+int     : crew recruited
 ```
 ## Ship Designations
 ```
 string  : ship name
 string  : ship ID
-4 bytes : sector
+int     : sector
 4 bytes : unkown data block 2
 ```
 ## Score categories
 There will be an arbetrary number of score categories based on the value in `number of categories`
 ```
-4 bytes : number of categories (n)
+int     : number of categories (n)
 
 --- This section will repeat n number of times
 string  : category name
-4 bytes : category value
+int     : category value
 ```
 ## Ship Details
 ```
@@ -36,17 +36,26 @@ string  : ship graphics base name
 
 ## Starting Crew Overview
 ```
-4 bytes : number of crew(n)
+int : number of crew(n)
 --- This section will repeat n number of times
 string  : race
 string  : name
 ```
 
+## Opponent info
+Unsure of whether this information refers to the player ship or the opposing ship.
+```
+bool    : hostile
+int     : jump Charge
+bool    : is jumping
+int     : jump animation ticks
+```
+
 ## Ship Resources
 ```
-4 bytes : Hull
-4 bytes : Fuel
-4 bytes : Drones
-4 bytes : Missiles
-4 bytes : Scrap
+int : Hull
+int : Fuel
+int : Drones
+int : Missiles
+int : Scrap
 ```

@@ -61,6 +61,14 @@ pub struct SaveFile {
     // ////////////////////// //
     pub starting_crew: Vec<StartingCrewMember>,
 
+    // ///////////// //
+    // Opponent info //
+    // ///////////// //
+    pub opponent_hostility: bool,
+    pub opponent_jump_charge: i32,
+    pub opponent_is_jumping: bool,
+    pub opponent_jump_animation_ticks: i32,
+
     // ////////////// //
     // Ship Resources //
     // ////////////// //

@@ -16,6 +16,15 @@ impl SaveFileWriter {
     }
 
     #[allow(unused)]
+    pub fn write_bool(&mut self, b: bool) {
+        if b {
+            self.write_i32(1);
+        } else {
+            self.write_i32(0);
+        }
+    }
+
+    #[allow(unused)]
     pub fn write_i32(&mut self, n: i32) {
         let bytes = n.to_le_bytes();
         self.file.write(&bytes);

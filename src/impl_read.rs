@@ -65,6 +65,14 @@ impl SaveFile {
             save.starting_crew.get_mut(i as usize).expect("").name = parser.read_string()?;
         }
 
+        // ///////////// //
+        // Opponent info //
+        // ///////////// //
+        save.opponent_hostility = parser.read_bool();
+        save.opponent_jump_charge = parser.read_i32();
+        save.opponent_is_jumping = parser.read_bool();
+        save.opponent_jump_animation_ticks = parser.read_i32();
+
         // ////////////// //
         // Ship Resources //
         // ////////////// //

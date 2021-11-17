@@ -1,9 +1,81 @@
 mod tests;
-mod head;
-mod print;
-mod read;
-mod write;
 
-pub use {
-    head::SaveFile,
-};
+//function definitions
+mod impl_print;
+mod impl_read;
+mod impl_write;
+
+//data types
+pub mod score_categories;
+pub mod crew_member;
+
+//
+mod save_file_parser;
+mod save_file_writer;
+
+use crew_member::StartingCrewMember;
+use score_categories::ScoreCategory;
+
+
+
+
+#[derive(Default, Debug)]
+pub struct SaveFile {
+    // ////// //
+    // Header //
+    // ////// //
+    pub version:i32,
+    pub unkown_data_block_1 : Vec<u8>,
+    pub ae_content: i32,
+    pub difficulty: i32,
+    pub ships_defeated: i32,
+    pub jumps_in_sector: i32,
+    pub scrap_collected: i32,
+    pub crew_recruited: i32,
+
+    // //////////////// //
+    // Ship Designation //
+    // //////////////// //
+    pub ship_name: String,
+    pub ship_id: String,
+    pub sector : i32,
+    pub unkown_data_block_2 : Vec<u8>,
+    // //////////////// //
+    // Score Categories //
+    // //////////////// //
+    pub scores: Vec<ScoreCategory>,
+
+    // //////////// //
+    // Ship Details //
+    // //////////// //
+    //ship name
+    //ship id
+    pub ship_graphics_base_name: String,
+
+    // ////////////////////// //
+    // Starting Crew Overview //
+    // ////////////////////// //
+    pub starting_crew: Vec<StartingCrewMember>,
+
+    // ////////////// //
+    // Ship Resources //
+    // ////////////// //
+    pub hull: i32,
+    pub fuel: i32,
+    pub drones: i32,
+    pub missiles: i32,
+    pub scrap: i32,
+
+    // //////////////////// //
+    // The rest of the file //
+    // //////////////////// //
+    pub unkown_data_block : Vec<u8>,
+
+}
+
+impl SaveFile {
+    
+
+    
+    
+}

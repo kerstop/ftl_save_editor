@@ -1,10 +1,9 @@
 use std::path::PathBuf;
 use std::path::Path;
 use std::fs::File;
-use super::super::save_file_parser::SaveFileParser;
-use super::super::score_categories::ScoreCategory;
-use super::super::crew_member::StartingCrewMember;
-use super::head::SaveFile;
+use super::save_file_parser::SaveFileParser;
+use super::SaveFile;
+use super::ScoreCategory;
 
 impl SaveFile {
     pub fn read_from_file(path: &Path) -> Result<SaveFile, String> {

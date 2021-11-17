@@ -1,6 +1,6 @@
-use super::head::SaveFile;
+//use super::save_file::SaveFile;
 
-impl SaveFile {
+impl super::SaveFile {
     
     #[allow(unused)]
     pub fn print_all_save_info(&self){

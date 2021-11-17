@@ -1,5 +1,5 @@
-use super::head::SaveFile;
-use super::super::save_file_writer::SaveFileWriter;
+use super::SaveFile;
+use super::save_file_writer::SaveFileWriter;
 use std::path::PathBuf;
 use std::path::Path;
 use std::fs::OpenOptions;

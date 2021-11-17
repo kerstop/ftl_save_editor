@@ -1,3 +1,7 @@
+
+
+
+
 mod tests;
 
 //function definitions
@@ -6,8 +10,8 @@ mod impl_read;
 mod impl_write;
 
 //data types
-pub mod score_categories;
-pub mod crew_member;
+mod score_categories;
+mod crew_member;
 
 //
 mod save_file_parser;

@@ -12,12 +12,12 @@ mod impl_write;
 //data types
 mod score_categories;
 mod crew_member;
+mod animation_state;
 
-//
 mod save_file_parser;
 mod save_file_writer;
 
-use crew_member::StartingCrewMember;
+use crew_member::{CrewMember, StartingCrewMember};
 use score_categories::ScoreCategory;
 
 
@@ -77,6 +77,11 @@ pub struct SaveFile {
     pub drones: i32,
     pub missiles: i32,
     pub scrap: i32,
+
+    // //// //
+    // Crew //
+    // //// //
+    pub crew: Vec<CrewMember>,
 
     // //////////////////// //
     // The rest of the file //

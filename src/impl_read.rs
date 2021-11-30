@@ -1,10 +1,12 @@
+mod save_file_parser;
+
 use std::path::PathBuf;
 use std::path::Path;
 use std::fs::File;
 use crate::animation_state::AnimationState;
 use crate::crew_member::CrewMember;
 
-use super::save_file_parser::SaveFileParser;
+use save_file_parser::SaveFileParser;
 use super::SaveFile;
 use super::ScoreCategory;
 

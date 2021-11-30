@@ -1,7 +1,3 @@
-
-
-
-
 mod tests;
 
 //function definitions
@@ -13,9 +9,6 @@ mod impl_write;
 mod score_categories;
 mod crew_member;
 mod animation_state;
-
-mod save_file_parser;
-mod save_file_writer;
 
 use crew_member::{CrewMember, StartingCrewMember};
 use score_categories::ScoreCategory;

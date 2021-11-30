@@ -1,8 +1,10 @@
+mod save_file_writer;
+
 use crate::animation_state::AnimationState;
 use crate::crew_member::CrewMember;
 
 use super::SaveFile;
-use super::save_file_writer::SaveFileWriter;
+use save_file_writer::SaveFileWriter;
 use std::path::PathBuf;
 use std::path::Path;
 use std::fs::OpenOptions;

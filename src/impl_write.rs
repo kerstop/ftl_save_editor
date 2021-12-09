@@ -8,13 +8,11 @@ use save_file_writer::SaveFileWriter;
 use std::path::PathBuf;
 use std::path::Path;
 use std::fs::OpenOptions;
+use std::io::{Error, ErrorKind};
 
 impl SaveFile {
-    pub fn write_to_file(&self, path: &Path) -> Result<(), String> {
-        let file = match OpenOptions::new().write(true).create(true).open(&path) {
-            Ok(x) => x,
-            Err(_) => return Err(format!("Unable to write to file at {:?}", path))
-        };
+    pub fn write_to_file(&self, path: &Path) -> Result<(), std::io::Error> {
+        let file = OpenOptions::new().write(true).create(true).open(&path)?;
 
         let mut writer = SaveFileWriter::new(file);
 
@@ -97,14 +95,13 @@ impl SaveFile {
         Ok(())
     }
 
-    pub fn write_to_local_save(&self) -> Result<(), String> {
+    pub fn write_to_local_save(&self) -> Result<(), std::io::Error> {
         let mut path: PathBuf = match home::home_dir() {
             Some(path) => path,
-            None => return Err(String::from("Unable to locate users home directory.")),
+            None => return Err(Error::new(ErrorKind::NotFound, "Unable to find the users home directory.")),
         };
         path.push(PathBuf::from("Documents/my games/fasterthanlight/continue.sav"));
-        self.write_to_file(path.as_path()).expect("Unable to save data to local save game location.");
-        Ok(())
+        self.write_to_file(path.as_path())
     }
 
     fn write_crew_member(u: &CrewMember, w: &mut SaveFileWriter) {
